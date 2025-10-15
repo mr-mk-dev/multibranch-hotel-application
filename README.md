@@ -191,4 +191,4 @@ API gateway for third-party travel websites.
                                     +----------------------+
 
  
-![System Design Diagram](https://drive.google.com/file/d/1mtBgkmvmvcTtR4eX9oMTqYrTvPAmqCbQ/view?usp=sharing)
+![System Design Diagram](./asset/system_design.png)
