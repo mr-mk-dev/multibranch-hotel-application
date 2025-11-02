@@ -7,9 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.manishcodes.hotelapplication.Enum.Gender;
-import me.manishcodes.hotelapplication.Enum.Role;
-import me.manishcodes.hotelapplication.Enum.Status;
+import me.manishcodes.hotelapplication.enums.Gender;
+import me.manishcodes.hotelapplication.enums.Role;
+import me.manishcodes.hotelapplication.enums.Status;
 
 import java.time.LocalDateTime;
 

@@ -192,3 +192,5 @@ API gateway for third-party travel websites.
 
  
 ![System Design Diagram](./asset/system_design.png)
+
+![Entity Relationship Diagram](./asset/er_diagram.png)
