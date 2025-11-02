@@ -1,4 +1,5 @@
 package me.manishcodes.hotelapplication.Enum;
 
-public class Role {
+public enum Role {
+    ADMIN, MANAGER, RECEPTIONIST, CUSTOMER
 }

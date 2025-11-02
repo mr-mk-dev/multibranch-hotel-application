@@ -1,4 +1,5 @@
 package me.manishcodes.hotelapplication.Enum;
 
-public class Status {
+public enum Status {
+    ACTIVE, INACTIVE, BLOCKED
 }
