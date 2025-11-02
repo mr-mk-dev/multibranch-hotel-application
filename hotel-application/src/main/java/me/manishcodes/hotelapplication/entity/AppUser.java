@@ -25,7 +25,7 @@ public class AppUser {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotel_id", nullable = false)
+    @JoinColumn(name = "hotel_id" , nullable = true)
     private Hotel hotel;
 
     @Column(nullable = false, length = 100)
@@ -45,7 +45,7 @@ public class AppUser {
     private String profileImgUrl;
 
     @Column(name = "password_hash", nullable = false)
-    private String passwordHash;
+    private String password;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)

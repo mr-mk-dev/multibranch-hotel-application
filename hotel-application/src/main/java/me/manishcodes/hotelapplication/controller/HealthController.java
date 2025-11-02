@@ -9,4 +9,9 @@ public class HealthController {
     public String healthChecker(){
         return "The health of application 'Hotel project' is ok and working fine";
     }
+
+    @GetMapping("/health2")
+    public String healthChecker2(){
+        return "The health of application 'Hotel project' is ok and working fine";
+    }
 }
