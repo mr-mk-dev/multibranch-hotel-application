@@ -16,7 +16,7 @@ public class HotelController {
         this.hotelService = hotelService;
     }
 
-    @PostMapping("/add-hotel")
+    @PostMapping("admin/add-hotel")
     public ResponseEntity<?> registerHotel(@RequestBody Hotel hotel){
         return ResponseEntity.ok(hotelService.registerHotel(hotel));
     }

@@ -25,7 +25,7 @@ public class AppUser {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotel_id" , nullable = true)
+    @JoinColumn(name = "hotel_id")
     private Hotel hotel;
 
     @Column(nullable = false, length = 100)
@@ -43,6 +43,9 @@ public class AppUser {
 
     @Column(name = "profile_img_url")
     private String profileImgUrl;
+
+    @Column(name = "public_id")
+    private String publicId;
 
     @Column(name = "password_hash", nullable = false)
     private String password;

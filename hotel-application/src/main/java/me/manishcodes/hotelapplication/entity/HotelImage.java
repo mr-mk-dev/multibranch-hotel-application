@@ -23,6 +23,9 @@ public class HotelImage {
     @Column(nullable = false)
     private String imageUrl;
 
+    @Column(nullable = false)
+    private String publicUrl;
+
     private String caption;
 
     @Column(nullable = false, updatable = false)
