@@ -41,7 +41,7 @@ It will demonstrate how to design, develop, and deploy a production-ready applic
 Java, Spring Boot, and PostgreSQL.
 
 -------------------------------------------------------------------------------------------
-#--------- Role based actions ----------
+#---------------Role based actions----------------
 
 ##1. Super Admin (Owner / CEO / Chain Owner)
 
