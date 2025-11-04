@@ -29,4 +29,12 @@ cloudinary:
   api_secret: ${CLOUDINARY_API_SECRET}
 
 
-
+logging:
+  level:
+    root: INFO
+    me.manishcodes.hotelapplication: DEBUG  # your main package
+  file:
+    name: logs/hotel-app.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"

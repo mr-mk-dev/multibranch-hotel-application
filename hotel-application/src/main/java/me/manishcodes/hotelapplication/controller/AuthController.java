@@ -29,11 +29,7 @@ public class AuthController {
             @RequestParam(value = "image", required = false) MultipartFile profileImg
     ) {
         AppUserDto appUser = new AppUserDto(name,email,phoneNumber,gender,password,role,hotelId);
-        try {
             return ResponseEntity.ok(appUserService.register(appUser, profileImg));
-        } catch (RuntimeException e) {
-            return ResponseEntity.badRequest().body(e);
-        }
     }
 
     @PostMapping("/login")

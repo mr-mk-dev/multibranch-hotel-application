@@ -8,10 +8,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HotelApplication {
 
     public static void main(String[] args) {
-        // Load your custom env file
+        // Load custom env file
         Dotenv dotenv = Dotenv.configure()
                 .directory(System.getProperty("user.dir"))
-                .filename("/hotel-application/app.env") // 👈 tell it the filename
+                .filename("/hotel-application/app.env") //  filename
                 .load();
 
         // Make all entries visible as system properties

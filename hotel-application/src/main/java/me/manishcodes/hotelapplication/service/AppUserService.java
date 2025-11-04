@@ -5,6 +5,8 @@ import me.manishcodes.hotelapplication.entity.AppUser;
 import me.manishcodes.hotelapplication.entity.Hotel;
 import me.manishcodes.hotelapplication.enums.Gender;
 import me.manishcodes.hotelapplication.enums.Role;
+import me.manishcodes.hotelapplication.exception.HotelNotFoundException;
+import me.manishcodes.hotelapplication.exception.ImageUploadException;
 import me.manishcodes.hotelapplication.repository.AppUserRepo;
 import me.manishcodes.hotelapplication.repository.HotelRepo;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.concurrent.CompletableFuture;
 
 @Service
 public class AppUserService {
@@ -47,20 +50,7 @@ public class AppUserService {
         Role role = Role.valueOf(dto.getRole().toUpperCase());
         if(role == Role.MANAGER || role == Role.STAFF){
             hotel = hotelRepo.findById(dto.getHotelId())
-                    .orElseThrow(() -> new RuntimeException("Hotel not found"));
-        }
-
-        String imgUrl = null;
-        String publicId = null;
-
-        if(file != null && !file.isEmpty()){
-            try {
-                CloudinaryService.UploadResult result = cloudinaryService.upload(file);
-                imgUrl = result.url();
-                publicId = result.publicId();
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+                    .orElseThrow(() -> new HotelNotFoundException("Hotel Not Found with id "+dto.getHotelId()));
         }
 
         AppUser appUser = new AppUser();
@@ -68,11 +58,19 @@ public class AppUserService {
         appUser.setName(dto.getName());
         appUser.setHotel(hotel);
         appUser.setRole(role);
-        appUser.setProfileImgUrl(imgUrl);
-        appUser.setPublicId(publicId);
         appUser.setPassword(passwordEncoder.encode(dto.getPassword()));
         appUser.setGender(Gender.valueOf(dto.getGender().toUpperCase()));
         appUser.setPhoneNumber(dto.getPhoneNumber());
+
+        if(file != null && !file.isEmpty()){
+                try {
+                    CloudinaryService.UploadResult result = cloudinaryService.upload(file);
+                    appUser.setProfileImgUrl(result.url());
+                    appUser.setPublicId(result.publicId());
+                } catch (IOException e) {
+                    throw new ImageUploadException("Cloudinary Service may be busy retry mechanism may get success ", e);
+                }
+        }
 
         return appUserRepo.save(appUser);
     }
@@ -89,7 +87,7 @@ public class AppUserService {
             return "Fail";
 
         } catch (AuthenticationException e) {
-            throw new UsernameNotFoundException("Invalid Credentials");
+            throw new UsernameNotFoundException("Invalid Credentials" , e);
         }
     }
 }
