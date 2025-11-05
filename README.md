@@ -43,7 +43,7 @@ Java, Spring Boot, and PostgreSQL.
 -------------------------------------------------------------------------------------------
 #---------------Role based actions----------------
 
-##1. Super Admin (Owner / CEO / Chain Owner)
+##1.Admin (Owner / CEO / Chain Owner)
 
 This is the top-level authority — the person (or group) who owns the entire chain.
 Responsibilities:
