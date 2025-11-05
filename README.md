@@ -21,7 +21,7 @@ of all hotel branches under one dashboard.
 5. Maintain clear role-based access control for security.
 
 ## User Roles
-- **Super Admin:** Manage branches, view global reports.
+- **Admin:** Manage branches, view global reports.
 - **Branch Manager:** Manage rooms, bookings, and staff of their branch.
 - **Receptionist:** Handle daily check-ins/outs and payments.
 - **Customer:** Search rooms, book, and pay online.
@@ -43,7 +43,7 @@ Java, Spring Boot, and PostgreSQL.
 -------------------------------------------------------------------------------------------
 #---------------Role based actions----------------
 
-##1. Super Admin (Owner / CEO / Chain Owner)
+##1.Admin (Owner / CEO / Chain Owner)
 
 This is the top-level authority — the person (or group) who owns the entire chain.
 Responsibilities:
