@@ -21,7 +21,7 @@ of all hotel branches under one dashboard.
 5. Maintain clear role-based access control for security.
 
 ## User Roles
-- **Super Admin:** Manage branches, view global reports.
+- **Admin:** Manage branches, view global reports.
 - **Branch Manager:** Manage rooms, bookings, and staff of their branch.
 - **Receptionist:** Handle daily check-ins/outs and payments.
 - **Customer:** Search rooms, book, and pay online.
