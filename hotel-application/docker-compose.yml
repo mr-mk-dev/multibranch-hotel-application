@@ -1,0 +1,30 @@
+networks:
+  hotelnet:
+    driver: bridge
+
+services:
+  app:
+    build: .
+    networks:
+      - hotelnet
+    container_name: hotel_app
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/mydb
+      SPRING_DATASOURCE_USERNAME: myuser
+      SPRING_DATASOURCE_PASSWORD: mypassword
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:latest
+    networks:
+      - hotelnet
+    container_name: postgres_container
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"

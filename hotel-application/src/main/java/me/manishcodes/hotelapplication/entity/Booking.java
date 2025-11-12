@@ -28,7 +28,7 @@ public class Booking {
 
     @OneToOne(fetch =  FetchType.LAZY)
     @JoinColumn(name = "user_id")
-    private AppUser appUser;
+    private Users users;
 
     private String bookingCode;
 

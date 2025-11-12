@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/multi_branch_hotel_db
+    username: hotel_app
+    password: hotel_app
+    driver-class-name: org.postgresql.Driver

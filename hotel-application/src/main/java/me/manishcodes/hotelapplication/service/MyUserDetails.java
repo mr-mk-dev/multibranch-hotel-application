@@ -1,6 +1,6 @@
 package me.manishcodes.hotelapplication.service;
 
-import me.manishcodes.hotelapplication.entity.AppUser;
+import me.manishcodes.hotelapplication.entity.Users;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -10,9 +10,9 @@ import java.util.List;
 
 public class MyUserDetails implements UserDetails {
 
-    private final AppUser user;
+    private final Users user;
 
-    public MyUserDetails(AppUser user){
+    public MyUserDetails(Users user){
         this.user = user;
     }
 

@@ -9,5 +9,4 @@ class HotelApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
