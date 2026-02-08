@@ -25,7 +25,10 @@ jwt:
   secret: mysupersecretlongrandomkeymysupersecretlongrandomkey
 
 cloudinary:
-  
+  cloud_name: drfuhsk4j
+  api_key: 528851141389943
+  api_secret: uaLumMygLniP8tLh2Vai6JFy2R0
+
 
 
 logging:

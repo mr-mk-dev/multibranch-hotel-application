@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Iterator;
+
 @RestController
 public class HotelController {
 
@@ -20,6 +22,12 @@ public class HotelController {
     public ResponseEntity<?> registerHotel(@RequestBody Hotel hotel){
         return ResponseEntity.ok(hotelService.registerHotel(hotel));
     }
+    Iterable<String> stringIterable = new Iterable<String>() {
+        @Override
+        public Iterator<String> iterator() {
+
+        }
+    };
 
 
 }

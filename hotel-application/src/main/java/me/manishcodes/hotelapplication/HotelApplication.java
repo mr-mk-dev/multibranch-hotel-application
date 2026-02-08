@@ -11,3 +11,5 @@ public class HotelApplication {
     }
 
 }
+// To run the program, execute the main method in this class, or use: ./mvnw
+// spring-boot:run
